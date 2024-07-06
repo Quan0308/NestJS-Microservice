@@ -1,0 +1,33 @@
+{
+  "name": "user-service",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/user-service/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "user-service:build",
+        "port": 3001
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "user-service:build:development"
+        },
+        "production": {
+          "buildTarget": "user-service:build:production"
+        }
+      }
+    },
+    "create-migration": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "typeorm migration:create",
+        "cwd": "apps/user-service/src/migrations"
+      }
+    }
+  }
+}

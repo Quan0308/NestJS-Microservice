@@ -34,7 +34,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/main-api-e2e/**/*"]
+      "exclude": ["apps/main-api-e2e/**/*", "apps/user-service-e2e/**/*"]
     }
   ]
 }

@@ -9,7 +9,8 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "main-api:build"
+        "buildTarget": "main-api:build",
+        "port": 3000
       },
       "configurations": {
         "development": {
