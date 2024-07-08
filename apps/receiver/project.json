@@ -1,0 +1,24 @@
+{
+  "name": "receiver",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/receiver/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "receiver:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "receiver:build:development"
+        },
+        "production": {
+          "buildTarget": "receiver:build:production"
+        }
+      }
+    }
+  }
+}

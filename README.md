@@ -13,6 +13,7 @@ comes with a LSP for Vim users.
 ## Start the application
 
 Run `npx nx serve main-api` to start the development server. Happy coding!
+Run `nx run-many --parallel --target=serve --projects=sender,receiver` to start both **sender** and **receiver** server.
 
 ## Build for production
 

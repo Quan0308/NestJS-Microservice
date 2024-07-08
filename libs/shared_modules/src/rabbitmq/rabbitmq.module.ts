@@ -21,7 +21,8 @@ import { RabbitmqService } from "./rabbitmq.service";
       },
       inject: [ConfigService],
     },
-    RabbitmqService,
+    // RabbitmqService,
   ],
+  exports: ["RMQ_SERVICE"],
 })
 export class RabbitmqModule {}

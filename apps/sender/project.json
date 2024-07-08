@@ -1,0 +1,24 @@
+{
+  "name": "sender",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/sender/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "sender:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "sender:build:development"
+        },
+        "production": {
+          "buildTarget": "sender:build:production"
+        }
+      }
+    }
+  }
+}
