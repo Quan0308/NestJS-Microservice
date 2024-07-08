@@ -12,7 +12,7 @@ comes with a LSP for Vim users.
 
 ## Start the application
 
-Run `npx nx serve main-api` to start the development server. Happy coding!
+Run `yarn start-service main-api` to start the main service.
 
 ## Build for production
 
@@ -23,19 +23,41 @@ Run `npx nx build main-api` to build the application. The build artifacts are st
 To execute tasks with Nx use the following syntax:
 
 ```
-npx nx <target> <project> <...options>
+yarn start-service <target-service>
 ```
 
 You can also run multiple targets:
 
 ```
-npx nx run-many -t <target1> <target2>
+yarn start-app
 ```
 
 ..or add `-p` to filter specific projects
 
 ```
 npx nx run-many -t <target1> <target2> -p <proj1> <proj2>
+```
+
+## Migration
+
+To create a migration file use this syntax:
+
+```
+nx run {service}:create-migration (add)_(table)_(table_name)
+```
+
+To run the migration, use this syntax:
+
+UNIX
+
+```
+bash ./migration.sh {service}
+```
+
+WINDOWS
+
+```
+migration.bat {service}
 ```
 
 Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/features/run-tasks).
@@ -60,4 +82,5 @@ It will show tasks that you can run with Nx.
 - [Join the community](https://nx.dev/community)
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
+
 # NestJS-Microservice
