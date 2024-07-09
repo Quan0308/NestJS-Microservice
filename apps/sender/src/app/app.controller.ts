@@ -1,6 +1,7 @@
 import { Controller, Get, Inject } from "@nestjs/common";
 
 import { AppService } from "./app.service";
+import { Observable } from "rxjs";
 
 @Controller()
 export class AppController {
@@ -9,7 +10,7 @@ export class AppController {
   ) {}
 
   @Get('send')
-  send(): { message: string } {
-    return this.appService.send();
+  async send(): Promise<number> {
+    return await this.appService.send();
   }
 }
